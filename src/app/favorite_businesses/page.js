@@ -1,61 +1,49 @@
 "use client";
 import Image from "next/image";
 import { useEffect } from "react";
-import React from 'react'
-import { metadata } from "./metadata"; // ✅ Import metadata from the new file
-
 
 export default function Page() {
   useEffect(() => {
-    // Initialize tooltips
-    const tooltipTriggerList = Array.from(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    tooltipTriggerList.forEach((tooltipTriggerEl) => {
-        new bootstrap.Tooltip(tooltipTriggerEl);
+    // Ensure the code runs only in the browser
+    if (typeof window === "undefined") return;
+
+    // Dynamically import Bootstrap to avoid SSR issues
+    import("bootstrap/dist/js/bootstrap.bundle").then((bootstrap) => {
+      // Initialize tooltips
+      const tooltipTriggerList = Array.from(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+      const tooltips = tooltipTriggerList.map(el => new bootstrap.Tooltip(el));
+
+      // Favorite button click handler
+      const handleFavoriteClick = function () {
+        this.classList.toggle("active");
+        const newTitle = this.classList.contains("active") ? "Remove from favorites" : "Add to favorites";
+
+        this.setAttribute("title", newTitle);
+        this.setAttribute("data-bs-original-title", newTitle);
+        bootstrap.Tooltip.getInstance(this)?.update();
+      };
+
+      // Icon selection handler
+      const handleIconSelect = function () {
+        document.querySelectorAll(".icon-select").forEach(btn => btn.classList.remove("active"));
+        this.classList.add("active");
+      };
+
+      // Add event listeners
+      const favoriteButtons = document.querySelectorAll(".favorite-btn");
+      const iconButtons = document.querySelectorAll(".icon-select");
+
+      favoriteButtons.forEach(button => button.addEventListener("click", handleFavoriteClick));
+      iconButtons.forEach(button => button.addEventListener("click", handleIconSelect));
+
+      // Cleanup
+      return () => {
+        tooltips.forEach(tooltip => tooltip.dispose());
+        favoriteButtons.forEach(button => button.removeEventListener("click", handleFavoriteClick));
+        iconButtons.forEach(button => button.removeEventListener("click", handleIconSelect));
+      };
     });
-
-    // Handle favorite button clicks
-    const favoriteButtons = document.querySelectorAll('.favorite-btn');
-    favoriteButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            this.classList.toggle('active');
-            if (this.classList.contains('active')) {
-                this.setAttribute('title', 'Remove from favorites');
-                this.setAttribute('data-bs-original-title', 'Remove from favorites');
-            } else {
-                this.setAttribute('title', 'Add to favorites');
-                this.setAttribute('data-bs-original-title', 'Add to favorites');
-            }
-
-            // Refresh tooltip
-            const tooltip = bootstrap.Tooltip.getInstance(this);
-            if (tooltip) {
-                tooltip.update();
-            }
-        });
-    });
-
-    // Handle icon selection in modal
-    const iconButtons = document.querySelectorAll('.icon-select');
-    iconButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            // Remove active class from all buttons
-            iconButtons.forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
-            this.classList.add('active');
-        });
-    });
-
-    // Cleanup function to remove event listeners when the component unmounts
-    return () => {
-        favoriteButtons.forEach(button => {
-            button.removeEventListener('click', () => {});
-        });
-
-        iconButtons.forEach(button => {
-            button.removeEventListener('click', () => {});
-        });
-    };
-}, []);  // Dependency array here
+  }, []);
 
   return (
     <div>
@@ -448,7 +436,7 @@ export default function Page() {
           </div>
           <div className="favorite-business-logo">
             <Image width={100} height={100}
-              src="/images/business_logo4.png"
+              src="/images/business_logo1.png"
               alt="Digital Innovators"
             />
           </div>
@@ -530,7 +518,7 @@ export default function Page() {
           </div>
           <div className="favorite-business-logo">
             <Image width={100} height={100}
-              src="/images/business_logo5.png"
+              src="/images/business_logo2.png"
               alt="Green Solutions"
             />
           </div>
@@ -609,7 +597,7 @@ export default function Page() {
           </div>
           <div className="favorite-business-logo">
             <Image width={100} height={100}
-              src="/images/business_logo6.png"
+              src="/images/business_logo3.png"
               alt="Financial Partners"
             />
           </div>
