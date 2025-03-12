@@ -5,49 +5,58 @@ import React from 'react'
 import { metadata } from "./metadata"; // ✅ Import metadata from the new file
 
 
-export default function page() {
+export default function Page() {
   useEffect(() => {
-    // console.log("Client-side code running");
-    document.addEventListener('DOMContentLoaded', function() {
-      // Initialize tooltips
-      const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-      tooltipTriggerList.map(function (tooltipTriggerEl) {
-          return new bootstrap.Tooltip(tooltipTriggerEl);
-      });
-      
-      // Handle favorite button clicks
-      const favoriteButtons = document.querySelectorAll('.favorite-btn');
-      favoriteButtons.forEach(button => {
-          button.addEventListener('click', function() {
-              this.classList.toggle('active');
-              if (this.classList.contains('active')) {
-                  this.setAttribute('title', 'Remove from favorites');
-                  this.setAttribute('data-bs-original-title', 'Remove from favorites');
-              } else {
-                  this.setAttribute('title', 'Add to favorites');
-                  this.setAttribute('data-bs-original-title', 'Add to favorites');
-              }
-              
-              // Refresh tooltip
-              const tooltip = bootstrap.Tooltip.getInstance(this);
-              if (tooltip) {
-                  tooltip.update();
-              }
-          });
-      });
-      
-      // Handle icon selection in modal
-      const iconButtons = document.querySelectorAll('.icon-select');
-      iconButtons.forEach(button => {
-          button.addEventListener('click', function() {
-              // Remove active class from all buttons
-              iconButtons.forEach(btn => btn.classList.remove('active'));
-              // Add active class to clicked button
-              this.classList.add('active');
-          });
-      });
-  });
-     }); 
+    // Initialize tooltips
+    const tooltipTriggerList = Array.from(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.forEach((tooltipTriggerEl) => {
+        new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+
+    // Handle favorite button clicks
+    const favoriteButtons = document.querySelectorAll('.favorite-btn');
+    favoriteButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            this.classList.toggle('active');
+            if (this.classList.contains('active')) {
+                this.setAttribute('title', 'Remove from favorites');
+                this.setAttribute('data-bs-original-title', 'Remove from favorites');
+            } else {
+                this.setAttribute('title', 'Add to favorites');
+                this.setAttribute('data-bs-original-title', 'Add to favorites');
+            }
+
+            // Refresh tooltip
+            const tooltip = bootstrap.Tooltip.getInstance(this);
+            if (tooltip) {
+                tooltip.update();
+            }
+        });
+    });
+
+    // Handle icon selection in modal
+    const iconButtons = document.querySelectorAll('.icon-select');
+    iconButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            // Remove active class from all buttons
+            iconButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+        });
+    });
+
+    // Cleanup function to remove event listeners when the component unmounts
+    return () => {
+        favoriteButtons.forEach(button => {
+            button.removeEventListener('click', () => {});
+        });
+
+        iconButtons.forEach(button => {
+            button.removeEventListener('click', () => {});
+        });
+    };
+}, []);  // Dependency array here
+
   return (
     <div>
         <>
@@ -210,7 +219,7 @@ export default function page() {
             </p>
             <p className="favorite-business-description">
               A leading business partnership representing 600+ retailers and
-              businesses in London's West End.
+              businesses in London&apos;s West End.
             </p>
             <div className="favorite-business-stats">
               <div>
@@ -766,8 +775,8 @@ export default function page() {
               </div>
               <div className="activity-content">
                 <p className="mb-1">
-                  You added <strong>Creative Studios</strong> to "Potential
-                  Partners" list
+                  You added <strong>Creative Studios</strong> to &#34;Potential
+                  Partners&#34; list
                 </p>
                 <small className="text-muted">1 week ago</small>
               </div>

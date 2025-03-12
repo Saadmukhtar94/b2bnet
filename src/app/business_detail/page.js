@@ -17,7 +17,7 @@ export default function page() {
           <div className="col-12 col-lg-3">
             <div className="sidebar p-3 mb-4">
               <div className="text-center py-2">
-                <Image
+                <Image style={{objectFit: "cover"}}
                   src="/images/dp.png"
                   alt="Profile"
                   className="profile-img mb-2"
@@ -32,12 +32,8 @@ export default function page() {
                 </button>
               </div>
               <div className="business-item">
-                {/* <img
-                    src="assets/images/business.png"
-                    alt="Tekgenie"
-                    className="business-logo"
-                  /> */}
-                <Image
+                
+                <Image style={{objectFit: "cover"}}
                   src="/images/business.png"
                   alt="Profile"
                   className="business-logo"
@@ -52,7 +48,7 @@ export default function page() {
                 </div>
               </div>
               <div className="business-item">
-                <Image
+                <Image style={{objectFit: "cover"}}
                   src="/images/business.png"
                   alt="Profile"
                   className="business-logo"
@@ -94,15 +90,15 @@ export default function page() {
             {/* Business Header */}
             <div className="business-detail-header bg-white rounded overflow-hidden mb-3">
               <div className="business-banner position-relative">
-                <img
-                  src="assets/images/business_banner.jpg"
+                <Image style={{objectFit: "cover"}} width={540} height={200}
+                  src="/images/business_banner.jpg"
                   alt="Tekgenie Banner"
                   className="w-100"
-                  style={{ height: 200, objectFit: "cover" }}
+                  // style={{ height: 200, objectFit: "cover" }}
                 />
                 <div className="business-logo-container">
-                  <img
-                    src="assets/images/business_logo2.png"
+                  <Image style={{objectFit: "cover"}} width={80} height={80}
+                    src="/images/business_logo2.png"
                     alt="Tekgenie"
                     className="business-detail-logo"
                   />
@@ -111,7 +107,7 @@ export default function page() {
               <div className="business-detail-info p-4 pt-5">
                 <div className="d-flex justify-content-between align-items-start mb-2">
                   <h4 className="mb-0">
-                    Tekgenie{" "}
+                    Tekgenie
                     <span className="verified-badge">
                       <i className="fas fa-check-circle" />
                     </span>
@@ -215,23 +211,23 @@ export default function page() {
               <h5 className="card-title mb-3">Media</h5>
               <div className="row g-2 business-media">
                 <div className="col-4">
-                  <img
-                    src="assets/images/media1.jpg"
+                  <Image style={{objectFit: "cover"}} width={66.05} height={21}
+                    src="/images/media1.jpg"
                     alt="Media 1"
                     className="img-fluid rounded"
                   />
                 </div>
                 <div className="col-4">
-                  <img
-                    src="assets/images/media2.jpg"
+                  <Image style={{objectFit: "cover"}} width={66.05} height={21}
+                    src="/images/media2.jpg"
                     alt="Media 2"
                     className="img-fluid rounded"
                   />
                 </div>
                 <div className="col-4">
                   <div className="position-relative">
-                    <img
-                      src="assets/images/media3.jpg"
+                    <Image style={{objectFit: "cover"}} width={66.05} height={21}
+                      src="/images/media3.jpg"
                       alt="Media 3"
                       className="img-fluid rounded"
                     />
@@ -248,8 +244,8 @@ export default function page() {
               <div className="row">
                 <div className="col-md-6 mb-3">
                   <div className="contact-person d-flex align-items-center">
-                    <img
-                      src="assets/images/contact_person.png"
+                    <Image style={{objectFit: "cover"}} width={60} height={60}
+                      src="/images/contact_person.png"
                       alt="John Smith"
                       className="contact-person-img me-3"
                     />
@@ -323,8 +319,8 @@ export default function page() {
                 <p className="mb-0">UB5 5AB</p>
               </div>
               <div className="map-container">
-                <img
-                  src="assets/images/map_preview.png"
+                <Image style={{objectFit: "cover"}} width={492} height={338.64}
+                  src="/images/map_preview.png"
                   alt="Business Location Map"
                   className="img-fluid rounded"
                 />
@@ -338,8 +334,8 @@ export default function page() {
                 <h5 className="card-title mb-3">Similar businesses</h5>
                 <div className="side-business">
                   <div className="d-flex">
-                    <img
-                      src="assets/images/business_logo1.png"
+                    <Image style={{objectFit: "cover"}} width={48} height={48}
+                      src="/images/business_logo1.png"
                       alt="Tech Solutions Ltd"
                       className="business-logo-small me-3"
                     />
@@ -363,8 +359,8 @@ export default function page() {
                 </div>
                 <div className="side-business">
                   <div className="d-flex">
-                    <img
-                      src="assets/images/business_logo2.png"
+                    <Image style={{objectFit: "cover"}} width={48} height={48}
+                      src="/images/business_logo2.png"
                       alt="Digital Innovators"
                       className="business-logo-small me-3"
                     />
@@ -388,8 +384,8 @@ export default function page() {
                 </div>
                 <div className="side-business">
                   <div className="d-flex">
-                    <img
-                      src="assets/images/business_logo3.png"
+                    <Image style={{objectFit: "cover"}} width={48} height={48}
+                      src="/images/business_logo3.png"
                       alt="Cloud Systems"
                       className="business-logo-small me-3"
                     />
@@ -419,8 +415,8 @@ export default function page() {
                 <h5 className="card-title mb-3">Upcoming events</h5>
                 <div className="side-event">
                   <div className="d-flex">
-                    <img
-                      src="assets/images/top_event.png"
+                    <Image style={{objectFit: "cover"}} width={70} height={111.5}
+                      src="/images/top_event.png"
                       alt="Tech Meetup"
                       className="event-banner-small me-3"
                     />
@@ -451,12 +447,12 @@ export default function page() {
             </div>
             {/* Promotional Banner */}
             <div className="p-2">
-              <img
-                src="assets/images/right_banner.png"
-                alt="Promotional Banner"
-                className="w-100"
-                style={{ height: 220, objectFit: "cover" }}
-              />
+              <Image  width={242} height={220}
+                              src="/images/right_banner.png"
+                              alt="Promotional Banner"
+                              className="w-100"
+                              style={{ objectFit: "cover" }}
+                            />
             </div>
           </div>
         </div>

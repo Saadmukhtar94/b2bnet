@@ -4,9 +4,9 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 
-export default function page() {
+export default function Page() {
   useEffect(() => {
-    // Ensure the script runs only in the browser (Next.js runs in SSR too)
+    // Ensure the script runs only in the browser
     if (typeof window !== "undefined") {
       // Character counter for feedback details
       const feedbackDetails = document.getElementById("feedbackDetails");
@@ -137,7 +137,7 @@ export default function page() {
               <div className="feedback-intro mb-4">
                 <p>
                   We value your input! Please share your thoughts, suggestions,
-                  or report any issues you've encountered while using B2BNet.
+                  or report any issues you&apos;ve encountered while using B2BNet.
                   Your feedback helps us improve our platform.
                 </p>
               </div>
@@ -442,7 +442,7 @@ export default function page() {
                   us. Your feedback has been submitted successfully.
                 </p>
                 <p className="mb-0">
-                  If you've requested to be contacted, a member of our team will
+                  If you&apos;ve requested to be contacted, a member of our team will
                   get back to you soon.
                 </p>
               </div>

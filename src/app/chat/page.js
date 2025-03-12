@@ -70,7 +70,7 @@ export default function page() {
                     <div className="chat-details">
                       <div className="chat-name">New West End Company</div>
                       <div className="chat-last-message">
-                        Thanks for reaching out! We'd be happy to discuss
+                        Thanks for reaching out! We&apos;d be happy to discuss
                         potential collaboration opportunities.
                       </div>
                       <div className="chat-meta">
@@ -93,7 +93,7 @@ export default function page() {
                     <div className="chat-details">
                       <div className="chat-name">Sarah Johnson</div>
                       <div className="chat-last-message">
-                        Hi there! I saw your business profile and I'm interested
+                        Hi there! I saw your business profile and I&apos;m interested
                         in your services.
                       </div>
                       <div className="chat-meta">
@@ -117,7 +117,7 @@ export default function page() {
                     <div className="chat-details">
                       <div className="chat-name">Tech Solutions Ltd</div>
                       <div className="chat-last-message">
-                        Let's schedule a meeting next week to discuss the
+                        Let&apos;s schedule a meeting next week to discuss the
                         project details.
                       </div>
                       <div className="chat-meta">
@@ -140,7 +140,7 @@ export default function page() {
                     <div className="chat-details">
                       <div className="chat-name">Michael Chen</div>
                       <div className="chat-last-message">
-                        I've sent you the proposal. Let me know what you think.
+                        I&apos;ve sent you the proposal. Let me know what you think.
                       </div>
                       <div className="chat-meta">
                         <span className="chat-time">Sun</span>
@@ -162,7 +162,7 @@ export default function page() {
                     <div className="chat-details">
                       <div className="chat-name">Creative Studios</div>
                       <div className="chat-last-message">
-                        The design mockups are ready for review. I've attached
+                        The design mockups are ready for review. I&apos;ve attached
                         them to this message.
                       </div>
                       <div className="chat-meta">
@@ -250,7 +250,7 @@ export default function page() {
                     <div className="message-content">
                       <div className="message-bubble">
                         <div className="message-text">
-                          Hi there! I'm interested in learning more about your
+                          Hi there! I&apos;m interested in learning more about your
                           upcoming events in the West End area. Do you have any
                           business networking events planned?
                         </div>
@@ -277,7 +277,7 @@ export default function page() {
                       <div className="message-bubble">
                         <div className="message-text">
                           Absolutely! We have several networking events coming
-                          up. Here's our events calendar for the next quarter:
+                          up. Here&apos;s our events calendar for the next quarter:
                         </div>
                         <div className="message-file">
                           <div className="file-preview pdf">
@@ -311,7 +311,7 @@ export default function page() {
                       <div className="message-bubble">
                         <div className="message-text">
                           Our next major networking event is on June 15th at The
-                          Landmark Hotel. It's specifically for businesses in
+                          Landmark Hotel. It&apos;s specifically for businesses in
                           the tech and retail sectors. Would you be interested
                           in attending?
                         </div>
@@ -326,7 +326,7 @@ export default function page() {
                     <div className="message-content">
                       <div className="message-bubble">
                         <div className="message-text">
-                          That sounds perfect! I'd definitely be interested in
+                          That sounds perfect! I&apos;d definitely be interested in
                           attending. Are there any opportunities for businesses
                           to present or showcase their services at the event?
                         </div>
@@ -352,7 +352,7 @@ export default function page() {
                     <div className="message-content">
                       <div className="message-bubble">
                         <div className="message-text">
-                          Thanks for reaching out! We'd be happy to discuss
+                          Thanks for reaching out! We&apos;d be happy to discuss
                           potential collaboration opportunities. We do have
                           exhibition spaces available for businesses to showcase
                           their services. The standard booth is £500, but we
@@ -402,7 +402,7 @@ export default function page() {
                       Business Improvement District
                     </div>
                     <div className="d-flex justify-content-center mt-3">
-                      import Link from "next/link";
+                      {/* import Link from "next/link"; */}
                       <Link
                         href="https://example.com"
                         target="_blank"
@@ -433,7 +433,7 @@ export default function page() {
                     <h6 className="section-title">About</h6>
                     <p className="section-content">
                       New West End Company is a business improvement district
-                      for London's West End. We represent over 600 businesses in
+                      for London&apos;s West End. We represent over 600 businesses in
                       the area, working to promote and enhance the commercial
                       environment.
                     </p>

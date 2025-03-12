@@ -9,6 +9,8 @@ export default function samplenavbar() {
         <ul className="d-flex  justify-content-center align-items-center gap-2 text-decoration-none list-unstyled flex-wrap">
         <li><Link href="/" className="text-decoration-none text-dark fs-5 border border-2">Home</Link></li>
           <li><Link href="/add_business" className="text-decoration-none text-dark fs-5 border border-2">add-business</Link></li>
+          <li><Link href="/business_detail" className="text-decoration-none text-dark fs-5 border border-2">business-detail</Link></li>
+
           <li><Link href="/chat" className="text-decoration-none text-dark fs-5 border border-2">Chat</Link></li>
           <li><Link href="/create_event" className="text-decoration-none text-dark fs-5 border border-2">create_event</Link></li>
 

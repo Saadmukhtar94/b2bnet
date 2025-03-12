@@ -1077,7 +1077,7 @@ export default function page() {
           </p>
           <div className="mb-3">
             <label htmlFor="deactivateReason" className="form-label">
-              Please tell us why you're leaving (optional)
+              Please tell us why you&apos;re leaving (optional)
             </label>
             {/* <select className="form-select" id="deactivateReason">
               <option value="" selected="">
@@ -1091,7 +1091,7 @@ export default function page() {
             </select> */}
             <select className="form-select" id="deactivateReason" defaultValue="">
   <option value="">Select a reason</option>
-  <option value="temporary">I'm temporarily taking a break</option>
+  <option value="temporary">I&apos;m temporarily taking a break</option>
   <option value="privacy">Privacy concerns</option>
   <option value="experience">Not having a good experience</option>
   <option value="alternative">Using an alternative platform</option>
@@ -1179,7 +1179,7 @@ export default function page() {
           </ul>
           <div className="mb-3">
             <label htmlFor="deleteReason" className="form-label">
-              Please tell us why you're deleting your account
+              Please tell us why you&apos;re deleting your account
             </label>
             {/* <select className="form-select" id="deleteReason" required="">
               <option value="" selected="">
