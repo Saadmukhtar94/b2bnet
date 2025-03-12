@@ -223,11 +223,11 @@ export default function page() {
           <input type="hidden" name="lon" defaultValue={123} />
           {/* Map Preview */}
           <div className="map-preview mb-3">
-            {/* <img
-              src="assets/images/map_preview.png"
-              alt="Event Location Map"
-              className="img-fluid rounded"
-            /> */}
+             <Image  width={488} height={335}
+                                  src="/images/map_preview.png"
+                                  alt="Map Location"
+                                  className="img-fluid rounded"
+                                />
           </div>
           {/* Price */}
           <div className="mb-3">
@@ -366,12 +366,12 @@ export default function page() {
       </div>
       {/* Promotional Banner */}
       <div className="p-2">
-        {/* <img
-          src="assets/images/right_banner.png"
-          alt="Promotional Banner"
-          className="w-100"
-          style={{ height: 220, objectFit: "cover" }}
-        /> */}
+       <Image  width={242} height={220}
+        src="/images/right_banner.png"
+        alt="Promotional Banner"
+        className="w-100"
+        // style={{ objectFit: "cover" }}
+      />
       </div>
     </div>
   </div>

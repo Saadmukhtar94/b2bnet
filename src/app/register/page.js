@@ -1,7 +1,8 @@
 "use client";
 import React, { useEffect } from "react";
+import Image from "next/image";
 import Script from "next/script";
-
+import Link from "next/link";
 export default function Page() {
   useEffect(() => {
     // Toggle password visibility
@@ -68,8 +69,8 @@ export default function Page() {
     <div className="auth-left">
       <div className="auth-content">
         <div className="text-center mb-4">
-          <img
-            src=" /images/logo.png"
+          <Image width={40} height={40}
+            src="/images/logo.png"
             alt="B2BNet Logo"
             className="auth-logo"
           />
@@ -218,7 +219,7 @@ export default function Page() {
         </form>
         <div className="auth-footer">
           <p>
-            Already have an account? <a href="login.html">Log in</a>
+            Already have an account? <Link href="/login">Log in</Link>
           </p>
         </div>
       </div>

@@ -126,8 +126,8 @@ export default function page() {
       <div className="business-card">
         <div className="row g-0">
           <div className="col-md-3 col-lg-4 d-flex align-items-center justify-content-center p-3">
-            <img
-              src=" /images/business.png"
+            <Image width={120} height={71.34}
+              src="/images/business.png"
               alt="Tekgenie"
               className="business-card-logo"
             />
@@ -172,8 +172,8 @@ export default function page() {
       <div className="business-card">
         <div className="row g-0">
           <div className="col-md-3 col-lg-4 d-flex align-items-center justify-content-center p-3">
-            <img
-              src=" /images/business.png"
+          <Image width={120} height={71.34}
+              src="/images/business.png"
               alt="Barking & Dagenham Chamber of Commerce"
               className="business-card-logo"
             />
@@ -217,8 +217,8 @@ export default function page() {
       <div className="business-card">
         <div className="row g-0">
           <div className="col-md-3 col-lg-4 d-flex align-items-center justify-content-center p-3">
-            <img
-              src=" /images/business.png"
+          <Image width={120} height={71.34}
+              src="/images/business.png"
               alt="Tekgenie"
               className="business-card-logo"
             />
@@ -263,8 +263,8 @@ export default function page() {
       <div className="business-card">
         <div className="row g-0">
           <div className="col-md-3 col-lg-4 d-flex align-items-center justify-content-center p-3">
-            <img
-              src=" /images/business.png"
+          <Image width={120} height={71.34}
+              src="/images/business.png"
               alt="Barking & Dagenham Chamber of Commerce"
               className="business-card-logo"
             />
@@ -313,8 +313,8 @@ export default function page() {
           <h5 className="card-title mb-3">Discover businesses</h5>
           <div className="side-business">
             <div className="d-flex">
-              <img
-                src=" /images/business_logo1.png"
+              <Image width={48} height={48}
+                src="/images/business_logo1.png"
                 alt="New West End Company"
                 className="business-logo-small me-3"
               />
@@ -341,8 +341,8 @@ export default function page() {
           </div>
           <div className="side-business">
             <div className="d-flex">
-              <img
-                src=" /images/business_logo2.png"
+            <Image width={48} height={48}
+                src="/images/business_logo2.png"
                 alt="New West End Company"
                 className="business-logo-small me-3"
               />
@@ -366,8 +366,8 @@ export default function page() {
           </div>
           <div className="side-business">
             <div className="d-flex">
-              <img
-                src=" /images/business_logo3.png"
+            <Image width={48} height={48}
+                src="/images/business_logo3.png"
                 alt="New West End Company"
                 className="business-logo-small me-3"
               />
@@ -391,8 +391,8 @@ export default function page() {
           </div>
           <div className="side-business">
             <div className="d-flex">
-              <img
-                src=" /images/business_logo1.png"
+            <Image width={48} height={48}
+                src="/images/business_logo1.png"
                 alt="New West End Company"
                 className="business-logo-small me-3"
               />
@@ -418,12 +418,12 @@ export default function page() {
       </div>
       {/* Promotional Banner */}
       <div className="p-2">
-        <img
-          src=" /images/right_banner.png"
-          alt="Promotional Banner"
-          className="w-100"
-          style={{ height: 220, objectFit: "cover" }}
-        />
+        <Image  width={242} height={220}
+        src="/images/right_banner.png"
+        alt="Promotional Banner"
+        className="w-100"
+        // style={{ objectFit: "cover" }}
+      />
       </div>
     </div>
   </div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link';
 import Script from 'next/script';
 export const metadata = {
   title: "B2BNet - Login",
@@ -75,9 +76,12 @@ export default function page() {
                 Remember me
               </label>
             </div>
-            <a href="#" className="forgot-password">
+            {/* <a href="#" className="forgot-password">
               Forgot password?
-            </a>
+            </a> */}
+            <Link href="/forgot-password" className="forgot-password">
+  Forgot password?
+</Link>
           </div>
           <div className="d-grid gap-2 mb-4">
             <button type="submit" className="btn btn-primary">
@@ -110,7 +114,9 @@ export default function page() {
         </form>
         <div className="auth-footer">
           <p>
-            Don't have an account? <a href="register.html">Sign up</a>
+            Don't have an account? <Link href="/register" className="signup-link">
+  Sign up
+</Link>
           </p>
         </div>
       </div>

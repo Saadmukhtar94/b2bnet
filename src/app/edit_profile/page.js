@@ -29,17 +29,13 @@ export default function page() {
                      />
                      <h6 className="mb-1">Shams Aujara</h6>
                    </div>
-                   <div className="d-grid gap-2 mt-2 mb-3">
+                   {/* <div className="d-grid gap-2 mt-2 mb-3">
                      <button className="btn btn-outline-custom btn-sm" type="button">
                        <i className="far fa-heart me-2" /> Favourite
                      </button>
-                   </div>
+                   </div> */}
                    <div className="business-item">
-                     {/* <img
-                       src=" /images/business.png"
-                       alt="Tekgenie"
-                       className="business-logo"
-                     /> */}
+                    
                       <Image
                        src="/images/business.png"
                        alt="Profile"
@@ -154,8 +150,8 @@ export default function page() {
                 {/* Profile Picture */}
                 <div className="mb-4 text-center">
                   <div className="profile-picture-container">
-                    <img
-                      src=" /images/dp.png"
+                    <Image width={100} height={100}
+                      src="/images/dp.png"
                       alt="Profile Picture"
                       className="edit-profile-picture"
                     />
@@ -398,12 +394,7 @@ export default function page() {
                   <label htmlFor="businessSelect" className="form-label">
                     Select Business to Edit
                   </label>
-                  {/* <select className="form-select" id="businessSelect">
-                    <option value={1} selected="">
-                      Tekgenie
-                    </option>
-                    <option value={2}>Deenscorp Royale</option>
-                  </select> */}
+                  
                   <select className="form-select" id="businessSelect" defaultValue="1">
   <option value="1">Tekgenie</option>
   <option value="2">Deenscorp Royale</option>
@@ -413,8 +404,8 @@ export default function page() {
                 {/* Business Logo */}
                 <div className="mb-4 text-center">
                   <div className="business-logo-container">
-                    <img
-                      src=" /images/business.png"
+                    <Image width={37} height={22}
+                      src="/images/business.png"
                       alt="Business Logo"
                       className="edit-business-logo"
                     />
@@ -446,8 +437,8 @@ export default function page() {
                 <div className="mb-4">
                   <label className="form-label">Business Banner</label>
                   <div className="business-banner-container">
-                    <img
-                      src=" /images/business_banner.jpg"
+                    <Image width={500} height={300}
+                      src="/images/business_banner.jpg"
                       alt="Business Banner"
                       className="edit-business-banner"
                     />
@@ -493,34 +484,7 @@ export default function page() {
                   <label htmlFor="businessCategory" className="form-label">
                     Business Category *
                   </label>
-                  {/* <select
-                    className="form-select"
-                    id="businessCategory"
-                    required=""
-                  >
-                    <option value="">Select a category</option>
-                    <option value="technology" selected="">
-                      Technology &amp; IT
-                    </option>
-                    <option value="marketing">
-                      Marketing &amp; Advertising
-                    </option>
-                    <option value="finance">Finance &amp; Banking</option>
-                    <option value="retail">Retail &amp; E-commerce</option>
-                    <option value="healthcare">Healthcare &amp; Medical</option>
-                    <option value="education">Education &amp; Training</option>
-                    <option value="manufacturing">
-                      Manufacturing &amp; Production
-                    </option>
-                    <option value="hospitality">
-                      Hospitality &amp; Tourism
-                    </option>
-                    <option value="construction">
-                      Construction &amp; Real Estate
-                    </option>
-                    <option value="other">Other</option>
-                  </select> */}
-                  <select className="form-select" id="businessCategory" required defaultValue="technology">
+  <select className="form-select" id="businessCategory" required defaultValue="technology">
   <option value="">Select a category</option>
   <option value="technology">Technology &amp; IT</option>
   <option value="marketing">Marketing &amp; Advertising</option>
@@ -1074,11 +1038,11 @@ export default function page() {
         </div>
         {/* Promotional Banner */}
         <div className="p-2">
-          <img
-            src=" /images/right_banner.png"
+           <Image  width={242} height={220}
+            src="/images/right_banner.png"
             alt="Promotional Banner"
             className="w-100"
-            style={{ height: 220, objectFit: "cover" }}
+            // style={{ objectFit: "cover" }}
           />
         </div>
       </div>

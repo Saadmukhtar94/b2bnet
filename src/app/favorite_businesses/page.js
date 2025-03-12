@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { useEffect } from "react";
 import React from 'react'
 import { metadata } from "./metadata"; // ✅ Import metadata from the new file
@@ -195,8 +195,8 @@ export default function page() {
             </div>
           </div>
           <div className="favorite-business-logo">
-            <img
-              src=" /images/business_logo1.png"
+            <Image width={100} height={100}
+              src="/images/business_logo1.png"
               alt="New West End Company"
             />
           </div>
@@ -277,8 +277,8 @@ export default function page() {
             </div>
           </div>
           <div className="favorite-business-logo">
-            <img
-              src=" /images/business_logo2.png"
+            <Image width={100} height={100}
+              src="/images/business_logo2.png"
               alt="Tech Solutions Ltd"
             />
           </div>
@@ -359,8 +359,8 @@ export default function page() {
             </div>
           </div>
           <div className="favorite-business-logo">
-            <img
-              src=" /images/business_logo3.png"
+            <Image width={100} height={100}
+              src="/images/business_logo3.png"
               alt="Creative Studios"
             />
           </div>
@@ -438,8 +438,8 @@ export default function page() {
             </div>
           </div>
           <div className="favorite-business-logo">
-            <img
-              src=" /images/business_logo4.png"
+            <Image width={100} height={100}
+              src="/images/business_logo4.png"
               alt="Digital Innovators"
             />
           </div>
@@ -520,8 +520,8 @@ export default function page() {
             </div>
           </div>
           <div className="favorite-business-logo">
-            <img
-              src=" /images/business_logo5.png"
+            <Image width={100} height={100}
+              src="/images/business_logo5.png"
               alt="Green Solutions"
             />
           </div>
@@ -599,8 +599,8 @@ export default function page() {
             </div>
           </div>
           <div className="favorite-business-logo">
-            <img
-              src=" /images/business_logo6.png"
+            <Image width={100} height={100}
+              src="/images/business_logo6.png"
               alt="Financial Partners"
             />
           </div>
@@ -787,8 +787,8 @@ export default function page() {
         </div>
         {/* Promotional Banner */}
         <div className="p-2">
-          <img
-            src=" /images/right_banner.png"
+          <Image width={100} height={100}
+            src="/images/right_banner.png"
             alt="Promotional Banner"
             className="w-100"
             style={{ height: 220, objectFit: "cover" }}

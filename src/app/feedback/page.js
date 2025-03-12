@@ -1,6 +1,6 @@
 "use client"
 import { useEffect } from "react";
-
+import Link from "next/link";
 import React from 'react'
 import Image from 'next/image'
 
@@ -536,12 +536,19 @@ export default function page() {
             If you need immediate assistance, our support team is here to help.
           </p>
           <div className="d-grid gap-2">
-            <a href="#" className="btn btn-outline-custom">
+            {/* <a href="#" className="btn btn-outline-custom">
               <i className="fas fa-headset me-2" /> Contact Support
             </a>
             <a href="#" className="btn btn-outline-custom">
               <i className="fas fa-book me-2" /> Visit Help Center
-            </a>
+            </a> */}
+            <Link href="/contact" className="btn btn-outline-custom">
+  <i className="fas fa-headset me-2" /> Contact Support
+</Link>
+
+<Link href="/help" className="btn btn-outline-custom">
+  <i className="fas fa-book me-2" /> Visit Help Center
+</Link>
           </div>
         </div>
       </div>

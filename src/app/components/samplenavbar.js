@@ -4,9 +4,9 @@ export default function samplenavbar() {
   return (
     <div>
           <div>
-      <nav className="d-flex flex-column justify-content-center align-items-center">
+      <nav className="d-flex flex-column justify-content-center align-items-center flex-wrap px-2">
         <h1>Testing Navbar</h1>
-        <ul className="d-flex  justify-content-center align-items-center gap-2 text-decoration-none list-unstyled">
+        <ul className="d-flex  justify-content-center align-items-center gap-2 text-decoration-none list-unstyled flex-wrap">
         <li><Link href="/" className="text-decoration-none text-dark fs-5 border border-2">Home</Link></li>
           <li><Link href="/add_business" className="text-decoration-none text-dark fs-5 border border-2">add-business</Link></li>
           <li><Link href="/chat" className="text-decoration-none text-dark fs-5 border border-2">Chat</Link></li>
