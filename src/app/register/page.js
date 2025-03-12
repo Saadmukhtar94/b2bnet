@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 import Image from "next/image";
-import Script from "next/script";
+// import Script from "next/script";
 import Link from "next/link";
 export default function Page() {
   useEffect(() => {
@@ -238,7 +238,7 @@ export default function Page() {
     </div>
   </div>
 </div>
-<Script strategy="afterInteractive">
+{/* <Script strategy="afterInteractive" id="register-page-script">
   {`  document.addEventListener('DOMContentLoaded', function() {
             // Toggle password visibility
             const togglePassword = document.querySelector('.toggle-password');
@@ -292,7 +292,7 @@ export default function Page() {
                 }
             });
         });`}
-</Script>
+</Script> */}
     </div>
   )
 }

@@ -48,7 +48,7 @@ export default function page() {
                     />
                   </div>
                   <small className="form-text text-muted mt-2">
-                    We'll send a password reset link to this email address.
+                    We&apos;ll send a password reset link to this email address.
                   </small>
                 </div>
                 <div className="d-grid gap-2 mb-4">
@@ -67,11 +67,11 @@ export default function page() {
                 </div>
                 <h4>Check Your Email</h4>
                 <p className="text-muted mb-4">
-                  We've sent a password reset link to your email address. Please
+                  We&apos;ve sent a password reset link to your email address. Please
                   check your inbox and follow the instructions.
                 </p>
                 <p className="text-muted small">
-                  Didn't receive the email? Check your spam folder or{" "}
+                  Didn&apos;t receive the email? Check your spam folder or{" "}
                   {/* <a href="#" id="resendLink">
               click here to resend
             </a> */}
@@ -94,7 +94,7 @@ export default function page() {
               <div className="auth-image-content">
                 <h2>Password Recovery</h2>
                 <p>
-                  Don't worry, we've got you covered. Follow the simple steps to
+                  Don&apos;t worry, we&apos;ve got you covered. Follow the simple steps to
                   reset your password and regain access to your account.
                 </p>
               </div>
@@ -102,7 +102,7 @@ export default function page() {
           </div>
         </div>
       </div>
-      <Script>
+      <Script id="forgot-password-script">
         {`  document.addEventListener('DOMContentLoaded', function() {
             const forgotPasswordForm = document.getElementById('forgotPasswordForm');
             const successMessage = document.getElementById('successMessage');
