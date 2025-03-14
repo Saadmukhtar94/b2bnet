@@ -78,7 +78,7 @@ export default function Page() {
               </div> */}
               <div className="business-item">
                 <Image
-                  src=" /images/business.png"
+                  src="/images/business.png"
                   alt="Tekgenie"
                   className="business-logo"
                   width={41}

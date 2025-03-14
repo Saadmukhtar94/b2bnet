@@ -151,7 +151,7 @@ export default function page() {
                     <Image
                       width={48}
                       height={48}
-                      src=" /images/business.png"
+                      src="/images/business.png"
                       alt="Tekgenie"
                       className="notification-img"
                     />
@@ -185,7 +185,7 @@ export default function page() {
                     <Image
                       width={48}
                       height={48}
-                      src=" /images/business.png"
+                      src="/images/business.png"
                       alt="Barking & Dagenham Chamber of Commerce"
                       className="notification-img"
                     />
@@ -223,7 +223,7 @@ export default function page() {
                     <Image
                       width={48}
                       height={48}
-                      src=" /images/dp.png"
+                      src="/images/dp.png"
                       alt="John Smith"
                       className="notification-img"
                     />
@@ -249,7 +249,7 @@ export default function page() {
                     <Image
                       width={48}
                       height={48}
-                      src=" /images/business.png"
+                      src="/images/business.png"
                       alt="Tekgenie"
                       className="notification-img"
                     />
@@ -276,7 +276,7 @@ export default function page() {
                     <Image
                       width={48}
                       height={48}
-                      src=" /images/business.png"
+                      src="/images/business.png"
                       alt="Deenscorp Royale"
                       className="notification-img"
                     />
@@ -304,7 +304,7 @@ export default function page() {
                     <Image
                       width={48}
                       height={48}
-                      src=" /images/business.png"
+                      src="/images/business.png"
                       alt="London Built Environment"
                       className="notification-img"
                     />
@@ -332,7 +332,7 @@ export default function page() {
                     <Image
                       width={48}
                       height={48}
-                      src=" /images/business.png"
+                      src="/images/business.png"
                       alt="B2BNet"
                       className="notification-img"
                     />
@@ -369,7 +369,7 @@ export default function page() {
                     <Image
                       width={48}
                       height={48}
-                      src=" /images/business_logo1.png"
+                      src="/images/business_logo1.png"
                       alt="New West End Company"
                       className="business-logo-small me-3"
                     />
@@ -399,7 +399,7 @@ export default function page() {
                     <Image
                       width={48}
                       height={48}
-                      src=" /images/business_logo2.png"
+                      src="/images/business_logo2.png"
                       alt="New West End Company"
                       className="business-logo-small me-3"
                     />
@@ -426,7 +426,7 @@ export default function page() {
                     <Image
                       width={48}
                       height={48}
-                      src=" /images/business_logo3.png"
+                      src="/images/business_logo3.png"
                       alt="New West End Company"
                       className="business-logo-small me-3"
                     />
@@ -453,7 +453,7 @@ export default function page() {
                     <Image
                       width={48}
                       height={48}
-                      src=" /images/business_logo1.png"
+                      src="/images/business_logo1.png"
                       alt="New West End Company"
                       className="business-logo-small me-3"
                     />
@@ -482,7 +482,7 @@ export default function page() {
               <Image
                 width={242}
                 height={220}
-                src=" /images/right_banner.png"
+                src="/images/right_banner.png"
                 alt="Promotional Banner"
                 className="w-100"
                 style={{ height: 220, objectFit: "cover" }}

@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function header() {
   return (
@@ -44,19 +45,19 @@ export default function header() {
         <div className="nav-icon">
           <i className="fas fa-comment" />
         </div>
-        <div className="nav-text d-none d-sm-block">Message</div>
+        <div ><Link href="/chat" className="nav-text d-none d-sm-block text-decoration-none"> Message</Link></div>
       </div>
       <div className="mx-3 mx-sm-2 text-center">
         <div className="nav-icon">
           <i className="fas fa-folder" />
         </div>
-        <div className="nav-text d-none d-sm-block">Directory</div>
+        <div ><Link href="/directory" className="nav-text d-none d-sm-block text-decoration-none"> Directory</Link></div>
       </div>
       <div className="mx-3 mx-sm-2 text-center">
         <div className="nav-icon">
           <i className="fas fa-bell" />
         </div>
-        <div className="nav-text d-none d-sm-block">Notification</div>
+        <div ><Link href="/notifications" className="nav-text d-none d-sm-block text-decoration-none"> Notification</Link></div>
       </div>
       {/* Profile Dropdown */}
       <div className="mx-3 mx-sm-2 text-center dropdown">
