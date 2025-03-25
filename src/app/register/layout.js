@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import React from 'react';
-import Head from 'next/head';
 export const metadata = {
   title: 'B2BNet - Register',
   description: 'Join the B2BNet business community',
