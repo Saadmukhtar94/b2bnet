@@ -376,7 +376,7 @@ export default function page() {
     </div>
   </div>
 </div>
-<Script>
+<Script id="createEvent-script">
   {`document.addEventListener('DOMContentLoaded', function() {
             // Toggle price field visibility based on isPaid checkbox
             const isPaidCheckbox = document.getElementById('isPaid');

@@ -585,7 +585,7 @@ export default function page() {
           </div>
         </div>
       </div>
-      <Script>
+      <Script id="chat-script">
         {`document.addEventListener('DOMContentLoaded', function() {
             // Initialize tooltips
             const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
