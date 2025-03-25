@@ -9,6 +9,7 @@
 //       yearSelect.appendChild(option);
 //     }
 //   });
-export function myFunction() {
-  console.log("Script loaded in Next.js");
-}
+// export function myFunction() {
+//   console.log("Script loaded in Next.js");
+// }
+console.log("hello")

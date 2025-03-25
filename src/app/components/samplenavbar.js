@@ -21,6 +21,7 @@ export default function samplenavbar() {
           <li><Link href="/forgot_password" className="text-decoration-none text-dark fs-5 border border-2">forgot-password</Link></li>
           <li><Link href="/login" className="text-decoration-none text-dark fs-5 border border-2">login</Link></li>
           <li><Link href="/register" className="text-decoration-none text-dark fs-5 border border-2">register</Link></li>
+
         </ul>
       </nav>
     </div>

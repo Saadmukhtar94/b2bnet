@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Header from "./components/header";
 import Samplenavbar from "./components/samplenavbar";
 import BootstrapLoader from "./components/BootstrapLoader"; 
+import { AuthProvider } from '@/lib/auth-context'
 
 import "bootstrap/dist/css/bootstrap.min.css"; 
 import "./globals.css";
@@ -29,10 +30,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <AuthProvider>
         <BootstrapLoader /> 
         <Header className="sticky-top" />
         <Samplenavbar />
         {children}
+        </AuthProvider>
       </body>
     </html>
   );

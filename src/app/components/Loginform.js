@@ -1,48 +1,63 @@
-"use client";
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { useRouter, useSearchParams } from 'next/navigation';
+ import { useAuth } from '@/lib/auth-context';
 
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import Loginform from "../components/Loginform";
-// export const metadata = {
-//   title: "B2BNet - Login",
-//   description: "B2BNet - Business Networking Platform",
-//   icons: {
-//     icon: "/images/logo.png",
-//   },
-// };
-
-export default function Page() {
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState('');
+export default function Loginform() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  // const [rememberMe, setRememberMe] = useState(false);
-  // const [isLoading, setIsLoading] = useState(false);
-  // const [error, setError] = useState('');
-  // // const router = useRouter();
-  // const searchParams = useSearchParams();
-  // const { login, user, loading } = useAuth();
-  useEffect(() => {}, []);
+  const [rememberMe, setRememberMe] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  
+  // const user = {
+  //   email: "saadmukhtar584@gmail.com",
+  //   password: "123456",
+  // };
+
+  const { login, user, loading } = useAuth(); 
+
+  // Redirect if already logged in
+  useEffect(() => {
+    if (user /* && !loading */) {
+      const redirectTo = searchParams.get('redirect');
+      router.replace(redirectTo ? decodeURIComponent(redirectTo) : '/dashboard');
+    }
+  }, [user,  loading,  router, searchParams]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
+    setIsLoading(true);
+    try {
+      await login(email, password);
+      // Auth context will handle storing the user data
+      
+      // Check if there's a redirect parameter
+      const redirectTo = searchParams.get('redirect');
+      if (redirectTo) {
+          router.push(decodeURIComponent(redirectTo));
+      } else {
+          router.push('/dashboard');
+      }
+  } catch (err) {
+      console.error('Login error:', err);
+      setError(err instanceof Error ? err.message : 'Login failed. Please check your credentials.');
+  } finally {
+      setIsLoading(false);
+  }
+  }
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+
   return (
-    <div className="auth-container">
-      <div className="auth-wrapper">
-        <div className="auth-left">
-          <div className="auth-content">
-            <div className="text-center mb-4">
-              <Image
-                width={40}
-                height={40}
-                src="/images/logo.png"
-                alt="B2BNet Logo"
-                className="auth-logo"
-              />
-            </div>
-            <h2 className="auth-title">Welcome Back</h2>
-            <p className="auth-subtitle">Log in to your B2BNet account</p>
-            {/* <form className="auth-form">
+ <form className="auth-form" onSubmit={handleSubmit}>
               <div className="mb-3">
                 <label htmlFor="email" className="form-label">
                   Email
@@ -76,6 +91,8 @@ export default function Page() {
                     className="form-control"
                     id="password"
                     placeholder="Enter your password"
+                    value={password}
+            onChange={(e) => setPassword(e.target.value)}
                     required
                   />
                   <button
@@ -123,6 +140,7 @@ export default function Page() {
                   ) : (
                     "Log In"
                   )}
+                  
                 </button>
               </div>
               <div className="auth-divider">
@@ -145,31 +163,7 @@ export default function Page() {
                   <i className="fab fa-linkedin-in" />
                 </button>
               </div>
-            </form> */}
-            <Loginform/>
-            <div className="auth-footer">
-              <p>
-                Don&apos;t have an account?{" "}
-                <Link href="/register" className="signup-link">
-                  Sign up
-                </Link>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="auth-right">
-          <div className="auth-image-container">
-            <div className="auth-overlay" />
-            <div className="auth-image-content">
-              <h2>Connect. Collaborate. Grow.</h2>
-              <p>
-                Join thousands of businesses networking and growing together on
-                B2BNet.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+            </form>
+
+  )
+ }
