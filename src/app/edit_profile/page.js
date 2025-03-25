@@ -1245,7 +1245,7 @@ export default function page() {
     </div>
   </div>
 </>
-<Script>
+<Script id='editProfile-script'>
   {` document.addEventListener('DOMContentLoaded', function() {
             // Profile image preview
             const profileImageInput = document.getElementById('profileImage');
