@@ -101,47 +101,47 @@ export default function RegisterForm() {
     setError('');
     setIsLoading(true);
     
-    // try {
-    //   // Ensure the API expects c_password instead of password_confirmation
-    //   const apiFormData = {
-    //     ...formData,
-    //     c_password: formData.password_confirmation
-    //   };
-      
-    //   await register(apiFormData);
-      
-    //   // Check if there's a redirect parameter
-    //   const redirectTo = searchParams.get('redirect');
-    //   if (redirectTo) {
-    //     router.push(decodeURIComponent(redirectTo));
-    //   } else {
-    //     router.push('/dashboard');
-    //   }
-    // } catch (err) {
-    //   console.error('Registration error:', err);
-    //   setError(err instanceof Error ? err.message : 'Registration failed. Please try again.');
-    // } finally {
-    //   setIsLoading(false);
-    // }
     try {
-        const apiFormData = {
-          ...formData,
-          c_password: formData.password_confirmation
-        };
+      // Ensure the API expects c_password instead of password_confirmation
+      const apiFormData = {
+        ...formData,
+        c_password: formData.password_confirmation
+      };
       
-        const response = await register(apiFormData);
-        console.log("Registration Response:", response);
+      await register(apiFormData);
       
-        if (response && response.id) {
-          const redirectTo = searchParams.get('redirect');
-          router.push(redirectTo ? decodeURIComponent(redirectTo) : '/dashboard');
-        } else {
-          throw new Error("Invalid response from server.");
-        }
-      } catch (err) {
-        console.error("Registration error:", err);
-        setError(err.message || "Registration failed. Please try again.");
+      // Check if there's a redirect parameter
+      const redirectTo = searchParams.get('redirect');
+      if (redirectTo) {
+        router.push(decodeURIComponent(redirectTo));
+      } else {
+        router.push('/dashboard');
       }
+    } catch (err) {
+      console.error('Registration error:', err);
+      setError(err instanceof Error ? err.message : 'Registration failed. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
+    // try {
+    //     const apiFormData = {
+    //       ...formData,
+    //       c_password: formData.password_confirmation
+    //     };
+      
+    //     const response = await register(apiFormData);
+    //     console.log("Registration Response:", response);
+      
+    //     if (response && response.id) {
+    //       const redirectTo = searchParams.get('redirect');
+    //       router.push(redirectTo ? decodeURIComponent(redirectTo) : '/dashboard');
+    //     } else {
+    //       throw new Error("Invalid response from server.");
+    //     }
+    //   } catch (err) {
+    //     console.error("Registration error:", err);
+    //     setError(err.message || "Registration failed. Please try again.");
+    //   }
       
   };
 
