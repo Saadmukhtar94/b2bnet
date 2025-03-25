@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Registerform from '../components/Registerform';
 
 export default function Register() {
@@ -9,7 +10,7 @@ export default function Register() {
         <div className="auth-left">
           <div className="auth-content">
             <div className="text-center mb-4">
-              <img src="/images/logo.png" alt="B2BNet Logo" className="auth-logo" />
+              <Image src="/images/logo.png" width={40} height={40} alt="B2BNet Logo" className="auth-logo" />
             </div>
             
             <h2 className="auth-title">Create Account</h2>

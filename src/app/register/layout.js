@@ -1,5 +1,6 @@
+import Head from 'next/head';
 import React from 'react';
-
+imort Head
 export const metadata = {
   title: 'B2BNet - Register',
   description: 'Join the B2BNet business community',
@@ -8,7 +9,10 @@ export const metadata = {
 export default function RegisterLayout({ children }) {
   return (
     <>
-      <link rel="stylesheet" href="/assets/css/auth.css" />
+    <Head>
+    <link rel="stylesheet" href="/assets/css/auth.css" />
+
+    </Head>
       {children}
     </>
   );

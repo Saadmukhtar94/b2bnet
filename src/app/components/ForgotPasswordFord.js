@@ -70,7 +70,7 @@ export default function ForgotPasswordForm() {
                 required 
               />
             </div>
-            <small className="form-text text-muted mt-2">We'll send a password reset link to this email address.</small>
+            <small className="form-text text-muted mt-2">We&apos;ll send a password reset link to this email address.</small>
           </div>
           
           <div className="d-grid gap-2 mb-4">
@@ -94,7 +94,7 @@ export default function ForgotPasswordForm() {
             <i className="fas fa-envelope-open-text text-success" style={{ fontSize: '60px' }}></i>
           </div>
           <h4>Check Your Email</h4>
-          <p className="text-muted mb-4">We've sent a password reset link to your email address. Please check your inbox and follow the instructions.</p>
+          <p className="text-muted mb-4">We&apos;ve sent a password reset link to your email address. Please check your inbox and follow the instructions.</p>
           
           {error && (
             <div className="alert alert-danger" role="alert">
@@ -103,7 +103,7 @@ export default function ForgotPasswordForm() {
           )}
           
           <p className="text-muted small">
-            Didn't receive the email? Check your spam folder or{' '}
+            Didn&apos;t receive the email? Check your spam folder or{' '}
             <a 
               href="#" 
               id="resendLink" 

@@ -27,7 +27,7 @@ const eslintConfig = [
   ...compat.extends("next/core-web-vitals"),
   {
     rules: {
-      "@next/next/inline-script-id": "off", // Disable the rule
+      // "@next/next/inline-script-id": "off", // Disable the rule
     },
   },
 ];

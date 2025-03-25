@@ -29,7 +29,7 @@ export default function ForgotPassword() {
             <div className="auth-overlay"></div>
             <div className="auth-image-content">
               <h2>Password Recovery</h2>
-              <p>Don't worry, we've got you covered. Follow the simple steps to reset your password and regain access to your account.</p>
+              <p>Don&apos;t worry, we&apos;ve got you covered. Follow the simple steps to reset your password and regain access to your account.</p>
             </div>
           </div>
         </div>
