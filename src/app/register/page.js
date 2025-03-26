@@ -1,9 +1,6 @@
-// 'use client';
-
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import Registerform from '../components/Registerform';
+import RegisterForm from '@/components/RegisterForm';
 
 export default function Register() {
   return (
@@ -12,13 +9,13 @@ export default function Register() {
         <div className="auth-left">
           <div className="auth-content">
             <div className="text-center mb-4">
-              <Image src="/images/logo.png" width={40} height={40} alt="B2BNet Logo" className="auth-logo" />
+              <img src="/assets/images/logo.png" alt="B2BNet Logo" className="auth-logo" />
             </div>
             
             <h2 className="auth-title">Create Account</h2>
             <p className="auth-subtitle">Join the B2BNet business community</p>
             
-            <Registerform/>
+            <RegisterForm />
             
             <div className="auth-footer">
               <p>Already have an account? <Link href="/login">Log in</Link></p>
