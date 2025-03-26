@@ -12,7 +12,7 @@ export default function Loginform() {
   const [error, setError] = useState('');
 
   const router = useRouter();
-  const searchParams = useSearchParams();
+  // const searchParams = useSearchParams();
 
   
   // const user = {
