@@ -21,7 +21,7 @@ export default function RegisterForm() {
   const [error, setError] = useState('');
   
   const router = useRouter();
-  const searchParams = useSearchParams();
+  // const searchParams = useSearchParams();
   const { register, user, loading } = useAuth();
 
   // Redirect if already logged in
