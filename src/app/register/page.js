@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import RegisterForm from '@/components/RegisterForm';
-
+import RegisterForm from '../components/Registerform';
 export default function Register() {
   return (
     <div className="auth-container">
