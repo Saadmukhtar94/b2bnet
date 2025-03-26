@@ -175,17 +175,19 @@
 // }
 "use client";
 
-import React, { useState } from "react";
+import React
+// , { useState }
+ from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Loginform from "../components/Loginform";
 
 export default function Page() {
-  const [showPassword, setShowPassword] = useState(false);
+  // const [showPassword, setShowPassword] = useState(false);
 
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
+  // const togglePasswordVisibility = () => {
+  //   setShowPassword(!showPassword);
+  // };
 
   return (
     <div className="auth-container">
