@@ -1,154 +1,6 @@
-// 'use client';
-
-// import React, { useState, useEffect } from 'react';
-// import { useRouter, useSearchParams } from 'next/navigation';
-// import { useAuth } from '@/lib/auth-context';
-
-// export default function RegisterForm() {
-//   const [formData, setFormData] = useState({
-//     first_name: '',
-//     last_name: '',
-//     email: '',
-//     password: '',
-//     password_confirmation: '',
-//   });
-//   const [passwordStrength, setPasswordStrength] = useState(0);
-//   const [strengthText, setStrengthText] = useState('Too weak');
-//   const [strengthClass, setStrengthClass] = useState('bg-danger');
-//   const [showPassword, setShowPassword] = useState(false);
-//   const [termsAccepted, setTermsAccepted] = useState(false);
-//   const [isLoading, setIsLoading] = useState(false);
-//   const [error, setError] = useState('');
-  
-//   const router = useRouter();
-//   const searchParams = useSearchParams();
-//   const { register, user, loading } = useAuth();
-
-//   // Redirect if already logged in
-//   useEffect(() => {
-//     if (user && !loading) {
-//       // Check if there's a redirect parameter
-//       const redirectTo = searchParams.get('redirect');
-//       if (redirectTo) {
-//         router.replace(decodeURIComponent(redirectTo));
-//       } else {
-//         router.replace('/dashboard');
-//       }
-//     }
-//   }, [user, loading, router, searchParams]);
-
-//   const handleChange = (e) => {
-//     const { name, value } = e.target;
-//     setFormData(prev => ({ ...prev, [name]: value }));
-    
-//     // Update password strength if password field is changed
-//     if (name === 'password') {
-//       calculatePasswordStrength(value);
-//     }
-    
-//     // Check if confirm password matches
-//     if (name === 'password_confirmation') {
-//       if (value !== formData.password) {
-//         e.target.setCustomValidity('Passwords do not match');
-//       } else {
-//         e.target.setCustomValidity('');
-//       }
-//     }
-//   };
-
-//   const calculatePasswordStrength = (password) => {
-//     let strength = 0;
-    
-//     if (password.length >= 8) strength += 25;
-//     if (password.match(/[A-Z]/)) strength += 25;
-//     if (password.match(/[0-9]/)) strength += 25;
-//     if (password.match(/[^A-Za-z0-9]/)) strength += 25;
-    
-//     setPasswordStrength(strength);
-    
-//     if (strength <= 25) {
-//       setStrengthText('Too weak');
-//       setStrengthClass('bg-danger');
-//     } else if (strength <= 50) {
-//       setStrengthText('Could be stronger');
-//       setStrengthClass('bg-warning');
-//     } else if (strength <= 75) {
-//       setStrengthText('Strong');
-//       setStrengthClass('bg-info');
-//     } else {
-//       setStrengthText('Very strong');
-//       setStrengthClass('bg-success');
-//     }
-//   };
-
-//   const togglePasswordVisibility = () => {
-//     setShowPassword(!showPassword);
-//   };
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-    
-//     if (!termsAccepted) {
-//       setError('You must accept the Terms of Service and Privacy Policy');
-//       return;
-//     }
-    
-//     if (formData.password !== formData.password_confirmation) {
-//       setError('Passwords do not match');
-//       return;
-//     }
-    
-//     setError('');
-//     setIsLoading(true);
-    
-//     try {
-//       // Ensure the API expects c_password instead of password_confirmation
-//       const apiFormData = {
-//         ...formData,
-//         c_password: formData.password_confirmation
-//       };
-      
-//       await register(apiFormData);
-      
-//       // Check if there's a redirect parameter
-//       const redirectTo = searchParams.get('redirect');
-//       if (redirectTo) {
-//         router.push(decodeURIComponent(redirectTo));
-//       } else {
-//         router.push('/dashboard');
-//       }
-//     } catch (err) {
-//       console.error('Registration error:', err);
-//       setError(err instanceof Error ? err.message : 'Registration failed. Please try again.');
-//     } finally {
-//       setIsLoading(false);
-//     }
-    
-      
-//   };
-
-//   // Update password strength when password changes
-//   useEffect(() => {
-//     calculatePasswordStrength(formData.password);
-//   }, [formData.password]);
-
-//   // Don't render the form if user is already logged in and being redirected
-//   if (user && !loading) {
-//     const redirectTo = searchParams.get('redirect');
-//     return (
-//       <div className="text-center p-4">
-//         <div className="spinner-border text-primary" role="status">
-//           <span className="visually-hidden">Redirecting...</span>
-//         </div>
-//         <p className="mt-2">You are already logged in. Redirecting{redirectTo ? ' to requested page' : ' to dashboard'}...</p>
-//       </div>
-//     );
-//   }
-
-//   return (
 'use client';
 
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useAuth } from '@/lib/auth-context';
 
@@ -169,15 +21,13 @@ export default function RegisterForm() {
   const [error, setError] = useState('');
   
   const router = useRouter();
-  const searchParams = (
-    <Suspense fallback={null}>
-      {useSearchParams()}
-    </Suspense>
-  );
+  const searchParams = useSearchParams();
   const { register, user, loading } = useAuth();
 
+  // Redirect if already logged in
   useEffect(() => {
     if (user && !loading) {
+      // Check if there's a redirect parameter
       const redirectTo = searchParams.get('redirect');
       if (redirectTo) {
         router.replace(decodeURIComponent(redirectTo));
@@ -191,10 +41,12 @@ export default function RegisterForm() {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
     
+    // Update password strength if password field is changed
     if (name === 'password') {
       calculatePasswordStrength(value);
     }
     
+    // Check if confirm password matches
     if (name === 'password_confirmation') {
       if (value !== formData.password) {
         e.target.setCustomValidity('Passwords do not match');
@@ -250,6 +102,7 @@ export default function RegisterForm() {
     setIsLoading(true);
     
     try {
+      // Ensure the API expects c_password instead of password_confirmation
       const apiFormData = {
         ...formData,
         c_password: formData.password_confirmation
@@ -257,6 +110,7 @@ export default function RegisterForm() {
       
       await register(apiFormData);
       
+      // Check if there's a redirect parameter
       const redirectTo = searchParams.get('redirect');
       if (redirectTo) {
         router.push(decodeURIComponent(redirectTo));
@@ -269,12 +123,16 @@ export default function RegisterForm() {
     } finally {
       setIsLoading(false);
     }
+    
+      
   };
 
+  // Update password strength when password changes
   useEffect(() => {
     calculatePasswordStrength(formData.password);
   }, [formData.password]);
 
+  // Don't render the form if user is already logged in and being redirected
   if (user && !loading) {
     const redirectTo = searchParams.get('redirect');
     return (
@@ -288,7 +146,6 @@ export default function RegisterForm() {
   }
 
   return (
-
     <form className="auth-form" onSubmit={handleSubmit}>
       {error && (
         <div className="alert alert-danger" role="alert">
